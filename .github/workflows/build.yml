@@ -45,13 +45,14 @@ jobs:
         run: make all
 
       - name: Upload Bin Files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.1.8
         with:
           name: ${{ env.ARTIFACT_NAME }}-BIN
           path: obj/*.bin
       
       - name: Upload Hex Files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.1.8
         with:
           name: ${{ env.ARTIFACT_NAME }}-HEX
-          path: obj/*.hex
+          path: obj/*.hex  
+          
