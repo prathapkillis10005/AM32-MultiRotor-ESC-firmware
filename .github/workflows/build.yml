@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v3
 
       - name: Install ARM SDK
         run: make arm_sdk_install
@@ -45,13 +45,13 @@ jobs:
         run: make all
 
       - name: Upload Bin Files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_NAME }}-BIN
           path: obj/*.bin
       
       - name: Upload Hex Files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ARTIFACT_NAME }}-HEX
           path: obj/*.hex
